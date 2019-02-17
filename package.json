@@ -1,0 +1,26 @@
+{
+  "name": "personality_test",
+  "version": "1.0.0",
+  "description": "Ask questions to determine personality of user",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "curtis",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "connect-mongo": "^2.0.3",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.4.12",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7"
+  }
+}

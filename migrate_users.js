@@ -1,0 +1,39 @@
+var config = require('./config');
+var path = require('path');
+let data_path = path.join(__dirname, config.data.users);
+var database_data = require (data_path);
+var mongoose = require('mongoose');
+
+var Users = require('./models/users');
+
+async function openConnection() {
+    let host = config.db.host;
+    let port = config.db.port;
+    let name = config.db.name; 
+    connect_str = 'mongodb://' + host + ':' + port + '/' + name;
+    var conn = await mongoose.connect(connect_str, {useNewUrlParser: true,
+                                                    useCreateIndex: true, 
+                                                    keepAlive: true});
+    console.log('We have a connection the the database....');
+}
+
+function closeConnection(){
+    mongoose.connection.close();
+    console.log('We have closed the connection the the database....');
+
+    console.log('Migration complete.....');
+}
+
+
+async function migrateData(){
+    await openConnection();
+   
+    for (var key in database_data['users']){
+        var users = new Users(database_data[key]);
+        await users.save();
+    }
+
+    closeConnection();
+}
+
+migrateData();
