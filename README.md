@@ -26,33 +26,34 @@ There are four models at this stage of the development:
 The application is build with an MVC framwork in mind:
 
 Sever
- app.js - is the main server function
+**app.js** - is the main server function
 
 Controllers
- personality_controller - adjudicates requests made to the router 
- controller_helper - primarily performs as the data access layer for the controller
+**controllers/personality_controller.js** - adjudicates requests made to the router 
+**controller_helper.js** - primarily performs as the data access layer for the controller
 
 Routes
- routes_personality - routes requests to the controllers to be adjuticated
+**routes/routes_personality.js** - routes requests to the controllers to be adjuticated
 
 Templates
- index.ejs - splash page where the user identifies themselves. In the interst of time a fully
+**index.ejs** - splash page where the user identifies themselves. In the interst of time a fully
              system of authentication and login functionality was not implmented.
 
- into_page.ejs - Entry point into the quiz
+**into_page.ejs** - Entry point into the quiz
 
- question_page.ejs - display for the questions where the user can anwer and later review those answers
+**question_page.ejs** - display for the questions where the user can anwer and later review those answers
 
- goodbye.ejs - final page after the test is complete, currently only loops back to into_page.ejs
+**goodbye.ejs** - final page after the test is complete, currently only loops back to into_page.ejs
 
- Test 
- The tests can be found in the test folder
+Test 
+The tests can be found in the test folder
 
 
 ## Installation
 
 For development and testing the configuration is based on the contents of the .env file
 currently the file is set up with the following:           
+'''
 NODE_ENV='test'
 DEV_APP_PORT=3002
 DEV_DB_HOST='127.0.0.1'
@@ -63,8 +64,9 @@ TEST_DB_HOST='127.0.0.1'
 TEST_DB_PORT='27017'
 TEST_DB_NAME='personality_test'
 DEBUG=app
+'''
 
-Change the environment by changing the NODE_ENV value to either 'dev' or 'test'
+**Change the environment** by changing the NODE_ENV value to either 'dev' or 'test'
 
 Data for the Questions and Categories were pre supplied and exists in two files:
 ./assets/dev_questions.json - The full listing of categories and questions in a JSON formatted file
@@ -73,19 +75,17 @@ Data for the Questions and Categories were pre supplied and exists in two files:
 ./assets/test_users.json - A list of users created primarily for testing purposes
 
 
-There are 2 migration scripts in the root directory:
+**Run the migration scripts** - there are 2 migration scripts in the root directory:
 migrate_questions.js - migrates the categories and questions to the database
 migrate_users.js - migrates the users into the database
 
 Both files will change which database to user based on the value of NODE_ENV 
 
-Once you have your NODE_ENV set you can start the server by doing the following:
+Once you have your NODE_ENV set and data migrated  you can start the server by doing the following:
 
-cd personality_test
-
-node app.js
-
-open your browser to localhost:3000 
+1. cd personality_test
+2. node app.js
+3. open your browser to **http://localhost:3000** 
 
 ### What to Expect
 1. Select which person you would like to answer the questions as
