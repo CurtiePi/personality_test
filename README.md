@@ -39,7 +39,7 @@ Templates
 **index.ejs** - splash page where the user identifies themselves. In the interst of time a fully
              system of authentication and login functionality was not implmented.
 
-**into_page.ejs** - Entry point into the quiz
+**intro_page.ejs** - Entry point into the quiz
 
 **question_page.ejs** - display for the questions where the user can anwer and later review those answers
 
