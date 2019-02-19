@@ -24,14 +24,6 @@ describe('Answer interactions with database',() => {
             let result = await helper.updateUserAnswer(user_id, question_id, user_answer);
             should.exist(result);
         });
-        it("Should get a user's answer from the database", async  function () {
-            let user_id = "5c68ebfd2c10991ed4d1e11c";
-            let question_id = "5c69cb3c71acae2cd75d60aa";
-            let user_answer = "female";
-            let result = await helper.insertUserAnswer(user_id, question_id, user_answer);
-            let answers = await helper.getUserAnswers(user_id);
-            answers.should.have.length(2);
-        });
         it("Should get a user's answer to one question from the database", async  function () {
             let user_id = "5c68ebfd2c10991ed4d1e11c";
             let question_id = "5c69cb3c71acae2cd75d60ab";
