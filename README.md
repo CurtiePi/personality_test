@@ -53,7 +53,7 @@ The tests can be found in the test folder
 
 For development and testing the configuration is based on the contents of the .env file
 currently the file is set up with the following:           
-'''
+```
 NODE_ENV='test'
 DEV_APP_PORT=3002
 DEV_DB_HOST='127.0.0.1'
@@ -64,7 +64,7 @@ TEST_DB_HOST='127.0.0.1'
 TEST_DB_PORT='27017'
 TEST_DB_NAME='personality_test'
 DEBUG=app
-'''
+```
 
 **Change the environment** by changing the NODE_ENV value to either 'dev' or 'test'
 
