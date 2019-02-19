@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectID = require('mongodb').ObjectID;
 
-
 var UsersSchema = new Schema({
   name: {
     type: String,
@@ -32,9 +31,13 @@ UsersSchema.options.toObject = {
   }
 };
 
+UsersSchema.statics.getUserById = function(user_id) {
+    return  Users.findOne( { '_id': ObjectID(user_id)} );
+}
+
 UsersSchema.statics.listUsers = function(callback) {
   console.log('Finding users');
-  User.find({}).
+  Users.find({}).
     exec(function(error, users) {
      if (error) {
        return callback(error);

@@ -1,0 +1,51 @@
+<!DOCTYPE html></DOCTYPE!>
+<html lang="en">
+
+<head>
+   
+    <link href="/styles/main.css" rel="stylesheet">
+    <link href="/styles/slider.css" rel="stylesheet">
+</head>
+
+<body class="page page-home chrome">
+    <div class="main-container">
+        <h3 class="text-center"> <%= question.order %>.  <%= question.question %> </h3>
+            <div class="container text-center">
+                <div class="text-left">
+                    <form id="answer" action="http://localhost:3000/answer" method="POST">
+                        <% if (question.question_type.type === 'number_range') { %>
+                            <div class="slidecontainer text-center">
+                                <% var median = (answer) ? answer.answer : (question.question_type.range.from + question.question_type.range.to)/2   %>
+                                <input type="range" id="myRange" min="<%= question.question_type.range.from %>" name="answer" max="<%= question.question_type.range.to %>" value="<%= median %>" class="slider">
+                                <p>You preferred age: <span id="slide_value_display"></span>
+                            </div>
+                        <% } else if (question.question_type.type.indexOf('single_choice') > -1 )  { %>
+                            <ul class="list-unstyled">
+                                <%  for (var i = 0; i < question.question_type.options.length; i++) { %>
+                                    <% var selected = ((answer) && answer.answer.trim() === question.question_type.options[i].trim()) ? 'checked="checked"' : "" %>
+                                    <li><input type="radio" name="answer" value="<%= question.question_type.options[i] %>" <%= selected %> ><%= question.question_type.options[i] %></li>
+                                <% } %>	
+                            </ul>
+                        <% } %>	
+                        <div class="nav text-center kbd">
+                            <% if (question.question_type.type === 'single_choice_conditional') { %>
+                                <% var predicate = Object.keys(question.question_type.condition.predicate)[0] %>
+                            
+                                <input type="hidden" name="predicate" value="<%= predicate %>">
+                                <input type="hidden" name="target_value" value=" <%= question.question_type.condition.predicate[predicate][1] %>">
+                                <input type="hidden" name="follow_up_id" value="<%= question.question_type.condition.if_positive %>">
+                            <% } %>
+                            <input type="hidden" name="question_id" value="<%= question.id %>">
+                            <input type="hidden" name="order" value="<%= question.order %>">
+                            <ul>
+                                <li><input type="submit" value="Next Question"></input></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>		
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
+            

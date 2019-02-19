@@ -4,7 +4,7 @@
   "description": "Ask questions to determine personality of user",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --exit"
   },
   "author": "curtis",
   "license": "ISC",
@@ -16,11 +16,14 @@
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "fs": "0.0.1-security",
     "mocha": "^5.2.0",
     "mongoose": "^5.4.12",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sinon": "^7.2.3",
+    "supertest-session": "^3.3.0"
   }
 }

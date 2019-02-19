@@ -1,7 +1,7 @@
 var config = require('./config');
 var path = require('path');
 let data_path = path.join(__dirname, config.data.users);
-var database_data = require (data_path);
+var database_data = require(data_path);
 var mongoose = require('mongoose');
 
 var Users = require('./models/users');
@@ -27,9 +27,10 @@ function closeConnection(){
 
 async function migrateData(){
     await openConnection();
-   
-    for (var key in database_data['users']){
-        var users = new Users(database_data[key]);
+
+    var data = database_data['users'];
+    for (var key in data){
+        var users = new Users(data[key]);
         await users.save();
     }
 

@@ -3,38 +3,38 @@
     {
       "name": "Isabella Baumfree",
       "email": "izzy@suffragette.org",
-      "age": "86" ,
+      "age": 86,
       "gender": "female"
     },
     {
       "name": "Fred Hampton",
       "email": "fred@blackpantherparty.org",
-      "age": "21" ,
+      "age": 21,
       "gender": "male"
     },
     {
       "name": "Denmark Vesey",
       "email": "denmark@carpenterunion.com",
-      "age": "55" ,
+      "age": 55,
       "gender": "male"
     },
     {
       "name": "Jean Baptiste Pointe Du Sable",
       "email": "jean@chicago.gov",
-      "age": "28" ,
+      "age": 28,
       "gender": "male"
     },
     {
       "name": "Nat Turner",
       "email": "nat@southhampton.edu",
-      "age": "31" ,
+      "age": 31,
       "gender": "male"
     },
     {
       "name": "Araminta Ross",
       "email": "izzy@undergroundrr.org",
-      "age": "91" ,
+      "age": 91,
       "gender": "female"
     }
   ]
-};
+}

@@ -7,24 +7,12 @@ var Questions = require('./questions');
 
 var AnswersSchema = new Schema({
   user_id: {
-    type: mongoose.Schema,Types.ObjectId,
-    ref: Users,
-    set: function(data) {
-      if (typeof myVar === 'string' || myVar instanceof String) {
-        return new ObjectId(data);
-      } else {
-        return data;
-    }
-  },
-  questions_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: Questions,
-    set: function(data) {
-      if (typeof myVar === 'string' || myVar instanceof String) {
-        return new ObjectId(data);
-      } else {
-        return data;
-    }
+    ref: Users
+  },
+  question_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: Questions
   },
   answer : {
     type: String,
@@ -40,6 +28,8 @@ AnswersSchema.options.toObject = {
     delete ret.__v;
   }
 };
+
+AnswersSchema.index({ user_id: 1, question_id: 1 }, { unique: true });
 
 var Answers = mongoose.model('Answers', AnswersSchema);
 module.exports = Answers;

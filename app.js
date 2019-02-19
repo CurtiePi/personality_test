@@ -5,6 +5,7 @@ var path = require('path');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var personalityRouter = require('./routes/personality_route');
 
 
@@ -19,6 +20,7 @@ mongoose.connect(connect_str, {useNewUrlParser: true,
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 
+console.log('Database: ' +  connect_str);
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 
 
@@ -32,6 +34,11 @@ app.set('view engine', 'ejs');
 app.use(logger('combined', {stream: accessLogStream}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(session({secret: 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch',
+                 saveUninitialized: false,
+                 resave: false,
+                 cookie: {secure: false}
+        }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 

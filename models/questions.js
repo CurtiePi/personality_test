@@ -42,5 +42,13 @@ QuestionsSchema.options.toObject = {
   }
 };
 
+QuestionsSchema.statics.getQuestionByOrdinal = function (ordinal) {
+    return Questions.findOne( {'order' : parseInt(ordinal, 10)});
+}
+
+QuestionsSchema.statics.getQuestionById = function(question_id) {
+    return  Questions.findOne( { '_id': ObjectID(question_id)} );
+}
+
 var Questions = mongoose.model('Questions', QuestionsSchema);
 module.exports = Questions;

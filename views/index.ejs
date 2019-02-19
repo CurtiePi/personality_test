@@ -1,0 +1,26 @@
+<DOCTYPE! html></DOCTYPE!>
+<html lang="en">
+
+<head>
+   
+    <link href="/styles/main.css" rel="stylesheet">
+</head>
+
+<body class="page page-home chrome">
+    <div class="container">
+        <p> Before we start, tell us who you are: </p>
+        <form action='/' method='POST'>
+          <ul class="list-unstyled">
+            <% for (var i = 0; i < users.length; i++) { %>
+              <li>
+                <input type='radio' name='user_id' value="<%= users[i].id %>"></input>
+                <%= users[i].name %>
+              </li>
+            <% } %>
+          </ul>
+          <input type='submit' value='Start'></input>
+        </form>
+    </div>
+</body>
+</html>
+            
