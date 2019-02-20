@@ -64,7 +64,7 @@ module.exports = {
             let question = await helper.retrieveQuestionByOrderNum(req.params.ordinal);
 
             let answer = await helper.getUserAnswerToQuestion(req.session.user_id,
-                                                              question.id);
+                                                                    question.id);
 
             if (question) {
                 return res.render('question_page',

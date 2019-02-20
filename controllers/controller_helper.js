@@ -109,8 +109,8 @@ module.exports = {
             let query = {"user_id": user_id,
                          "question_id": question_id};
 
-            let answers = await Answers.findOne(query);
-            return answers;
+            let answer = await Answers.findOne(query);
+            return answer;
         } catch (err) {
             console.log("Having a problem getting a user's answer");
         }

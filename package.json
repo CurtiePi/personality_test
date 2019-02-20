@@ -13,6 +13,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "connect-mongo": "^2.0.3",
+    "cookiejar": "^2.1.2",
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
@@ -21,8 +22,10 @@
     "mocha": "^5.2.0",
     "mongoose": "^5.4.12",
     "morgan": "^1.9.1",
+    "node-mocks-http": "^1.7.3",
     "nodemon": "^1.18.10",
     "path": "^0.12.7",
+    "should": "^13.2.3",
     "sinon": "^7.2.3",
     "supertest-session": "^3.3.0"
   }

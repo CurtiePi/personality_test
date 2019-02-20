@@ -1,0 +1,49 @@
+{
+  answers: [
+     {
+       "user_id": "5c68ebfd2c10991ed4d1e119",
+       "question_id": "5c69cb3c71acae2cd75d60aa",
+       "answer": "male"
+     },
+     {
+       "user_id": "5c68ebfd2c10991ed4d1e11b",
+       "question_id": "5c69cb3c71acae2cd75d60aa",
+       "answer": "male"
+     },
+     {
+        "user_id": "5c68ebfd2c10991ed4d1e11d",
+        "question_id": "5c69cb3c71acae2cd75d60aa",
+        "answer": "female"
+     },
+     {
+       "user_id": "5c68ebfd2c10991ed4d1e119",
+       "question_id": "5c69cb3c71acae2cd75d60ab",
+       "answer": "very important"
+     },
+     {
+       "user_id": "5c68ebfd2c10991ed4d1e11d",
+       "question_id": "5c69cb3c71acae2cd75d60ab",
+       "answer": "important"
+     },
+     {
+       "user_id": "5c68ebfd2c10991ed4d1e11b",
+       "question_id": "5c69cb3c71acae2cd75d60ab",
+       "answer": "not important"
+     },
+     {
+       "user_id": "5c68ebfd2c10991ed4d1e11d",
+       "question_id": "5c69cb3c71acae2cd75d60ad",
+       "answer": "very important"
+     },
+     {
+       "user_id": "5c68ebfd2c10991ed4d1e119",
+       "question_id": "5c69cb3c71acae2cd75d60ad",
+       "answer": "important"
+     },
+     {
+       "user_id": "5c68ebfd2c10991ed4d1e11d",
+       "question_id": "5c69cb3c71acae2cd75d60ac",
+       "answer": "25"
+     }
+  ]
+}

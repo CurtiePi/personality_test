@@ -6,7 +6,10 @@ let should = chai.should();
 
 before( async function() {
     await helper.clearAnswers();
-    
+    let user_id = "5c68ebfd2c10991ed4d1e119";
+    let question_id = "5c69cb3c71acae2cd75d60aa";
+    let user_answer = "male";
+    let result = await helper.insertUserAnswer(user_id, question_id, user_answer);
 });
 
 describe('Answer interactions with database',() => {
@@ -19,7 +22,7 @@ describe('Answer interactions with database',() => {
         });
         it("Should update an answer in the database", async  function () {
             let user_id = "5c68ebfd2c10991ed4d1e11c";
-            let question_id = "5c69cb3c71acae2cd75d60ad";
+            let question_id = "5c69cb3c71acae2cd75d60ab";
             let user_answer = "important";
             let result = await helper.updateUserAnswer(user_id, question_id, user_answer);
             should.exist(result);
@@ -27,7 +30,7 @@ describe('Answer interactions with database',() => {
         it("Should get a user's answer to one question from the database", async  function () {
             let user_id = "5c68ebfd2c10991ed4d1e11c";
             let question_id = "5c69cb3c71acae2cd75d60ab";
-            let answers = await helper.getUserAnswerToQuestion(user_id, question_id);
-            answers.should.have.length(1);
+            let answer = await helper.getUserAnswerToQuestion(user_id, question_id);
+            answer.should.be.a('object');
         });
 });

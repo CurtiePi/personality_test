@@ -68,16 +68,24 @@ DEBUG=app
 
 **Change the environment** by changing the NODE_ENV value to either 'dev' or 'test'
 
+Also located in the root directory is the **config.js** which contains the configuration information including:
+* Database connection information
+* File asset location 
+* Server Port information
+
 Data for the Questions and Categories were pre supplied and exists in two files:
 ./assets/dev_questions.json - The full listing of categories and questions in a JSON formatted file
 ./assets/testquestions.json -  An full listing of categories and an abbreviated listing questions in a JSON formatted file
 ./assets/dev_users.json - A list of users created primarily for testing purposes
 ./assets/test_users.json - A list of users created primarily for testing purposes
+./assets/dev_answers.json - A list of answers created primarily for testing purposes
+./assets/test_answers.json - A list of answers created primarily for testing purposes
 
 
-**Run the migration scripts** - there are 2 migration scripts in the root directory:
+**Run the migration scripts** - there are 3 migration scripts in the root directory:
 migrate_questions.js - migrates the categories and questions to the database
 migrate_users.js - migrates the users into the database
+migrate_answers.js - migrates the answers into the database
 
 Both files will change which database to user based on the value of NODE_ENV 
 
@@ -113,3 +121,7 @@ changes later in the process. I would have liked to have found a clever way to i
 from the file was considered but that thought died soon after the thought of using MySql for the database layer. 
 
 Now it's on to the next big thing...
+
+Post Mortem: in the end I still haven't been able to get the test requiring the session variable to run. Having tried a few different packages, 
+I came closest with a package nameed node-mocks-http. At this point I'm not giving up, just highly discouraged with the vast amounts of 
+poor documentation I've waded through this past 24 hours. 

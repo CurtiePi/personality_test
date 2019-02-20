@@ -14,7 +14,8 @@ const dev = {
   },
   data: {
     users: '/assets/dev_users.json',
-    questions: '/assets/dev_questions.json'
+    questions: '/assets/dev_questions.json',
+    answers: '/assets/dev_answers.json'
   }
 };
 
@@ -29,7 +30,8 @@ const test = {
   },
   data: {
     users: '/assets/test_users.json',
-    questions: '/assets/test_questions.json'
+    questions: '/assets/test_questions.json',
+    answers: '/assets/test_answers.json'
   }
 };
 
